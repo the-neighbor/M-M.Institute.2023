@@ -2,12 +2,36 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
-
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
+import Root from "./routes/root";
+import PostPage from "./routes/post"
+import ProfilePage from "./routes/profile"
+import ErrorPage from "./routes/error-page";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root/>,
+    errorElement: <ErrorPage />,
+    children: [{
+      path: "/post/:postId",
+      element: <PostPage />,
+    },
+    {
+      path: "/profile/:userName",
+      element: <ProfilePage />,
+    }]
+  },
+]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

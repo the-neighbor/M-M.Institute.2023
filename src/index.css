@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.post {
+  margin: 1em;
+}
+
+/* Profile Page Styling */
+
+.profile {
+  text-align: center;
+  margin: 1em;
+}
+
+.profileImage {
+  margin: 2em;
+  width: 60%;
+  height: auto;
+}
