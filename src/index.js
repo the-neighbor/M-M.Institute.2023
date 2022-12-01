@@ -13,6 +13,7 @@ import Root from "./routes/root";
 import PostPage from "./routes/post"
 import ProfilePage from "./routes/profile"
 import ErrorPage from "./routes/error-page";
+import ComposePage from './routes/compose';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
     {
       path: "/profile/:userName",
       element: <ProfilePage />,
+    },
+    {
+      path: "/compose",
+      element: <ComposePage />,
     }]
   },
 ]);
