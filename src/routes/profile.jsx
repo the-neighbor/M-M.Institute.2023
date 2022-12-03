@@ -20,44 +20,25 @@ export default function ProfilePage (props) {
             setUserData(json);
         }
         fetchData();
-    })
+    }, [userName])
 
-    props = {
-        displayName: "This is a test post",
-        userName: userData.username,
-        headerImg: "https://picsum.photos/500/300",
-        profileImg: "https://picsum.photos/200/200",
-        bio: userData.profile.bio
-    }
-    const posts = [{
-            title: "This is a test post",
-            author: "testuser",
-            body: "test body"
-        },
-        {
-            title: "This is a test post",
-            author: "testuser",
-            image: "https://picsum.photos/500/300",
-            body: "test body"
-        },
-        {
-            title: "This is a test post",
-            author: "testuser",
-            image: "https://picsum.photos/500/300",
-            body: "test body"
-        }
-    ]
+    props = userData ? userData : {}
+    const posts = userData.posts ? userData.posts : [];
+    const profile = {...props}
     return (
+        <>
+        <div className="Background">
         <Container className="profile-page">
             <Row>
                 <Col sm={12} md={4}>
-                    <Profile {...props} />
+                    {profile && profile.profile ? <Profile {...profile} /> : ""}
                 </Col>
                 <Col sm={12} md={8}>
-                    {posts.map((post) => (<Post {...post} />))}
+                    {posts.map((post) => (<Post key={post._id} {...post} />))}
                 </Col>
-            </Row>
-            
+            </Row>  
         </Container>
+        </div>
+        </>
     );
 }

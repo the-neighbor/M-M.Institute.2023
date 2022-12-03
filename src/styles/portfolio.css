@@ -1,0 +1,40 @@
+.parent { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(4, 1fr); 
+    grid-column-gap: 1em;
+    grid-row-gap: 1em; 
+    height:40em;
+    width:40em;
+    }
+    .div1 { grid-area: 1 / 2 / 2 / 5; } 
+    .div2 { grid-area: 4 / 1 / 5 / 4; } 
+    .div3 { grid-area: 1 / 1 / 4 / 2; } 
+    .div4 { grid-area: 3 / 4 / 5 / 5; } 
+    .div5 { grid-area: 2 / 3 / 3 / 5; } 
+    .div6 { grid-area: 2 / 2 / 4 / 3; } 
+    .div7 { grid-area: 3 / 3 / 4 / 4; } 
+    
+.portfolio {
+      border-radius:25px;
+      background-color: black;
+      overflow:hidden;
+      position:relative;
+    }
+    
+.project-image {
+      width: 100%;
+      height: 100%;
+    }
+.project-body {
+        padding: 1em;
+        color: white;
+        text-align: center;
+        position:absolute;
+        z-index: 100;
+        bottom:0;
+        opacity:0;
+}
+.portfolio:hover .project-body{
+    opacity:1;
+}

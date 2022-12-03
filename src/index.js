@@ -14,6 +14,7 @@ import PostPage from "./routes/post"
 import ProfilePage from "./routes/profile"
 import ErrorPage from "./routes/error-page";
 import ComposePage from './routes/compose';
+import PortfolioPage from './routes/portfolio';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
     {
       path: "/compose",
       element: <ComposePage />,
+    },
+    {
+      path: "/portfolio",
+      element: <PortfolioPage />,
     }]
   },
 ]);

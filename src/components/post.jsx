@@ -9,9 +9,9 @@ function Post (props) {
         <Card.Title>{props.title}</Card.Title>
 
         <Card.Text>
-            {props.body}
+            {props.content}
         </Card.Text>
-        <Card.Link href={"/profile/" + props.author}>By @{props.author}</Card.Link>
+        <Card.Link href={"/profile/" + props.username}>By @{props.username}</Card.Link>
         </Card.Body>
     </Card>
     </div>
