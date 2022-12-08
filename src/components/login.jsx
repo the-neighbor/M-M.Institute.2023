@@ -5,7 +5,7 @@ function Compose(props) {
   return (
     <Card>
       <Card.Body>
-        <Card.Title>login</Card.Title>
+        <Card.Title>Login</Card.Title>
         <Form>
           <Form.Group className="mb-3" controlId="formContent">
             <Form.Label>Content</Form.Label>

@@ -28,7 +28,7 @@ const projects = [...props]
       <div key={i + 1} className={"portfolio div" + (i + 1)} onClick={()=>{console.log(project);setSelected({...project});handleShow()}}>
         <img className="project-image" src={props[i].image}></img>
         <div className="project-body">
-          <h1>{props[i].title}</h1>
+          <h4>{props[i].title}</h4>
         </div>
       </div>
     );
@@ -40,9 +40,17 @@ const projects = [...props]
       </Container>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{selected.title}</Modal.Title>
+          <Modal.Title as="h1">{selected.title}</Modal.Title>
+          <br></br>
+          <br></br>
+            <Modal.Title as="p">{selected.technologies ? selected.technologies.map((tech) => tech) : ""}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>{selected.description}</Modal.Body>
+        <Modal.Body>{selected.description}
+        <br></br>
+        <a href={selected.repo}>Code</a>
+        <br></br>
+        <a href={selected.live}>Live</a>
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close

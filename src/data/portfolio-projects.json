@@ -2,16 +2,44 @@
     {
         "title": "M-M.Institute",
         "description": "A simple markdown Previewer for the web",
-        "image": "https://picsum.photos/300/100"
+        "image": "https://picsum.photos/300/100",
+        "repo":"",
+        "live":"",
+        "technologies": [
+            "React",
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ]
+    },
+    {
+        "title": "M-M.API",
+        "description": "A simple markdown Previewer for the web",
+        "image": "https://picsum.photos/330/110"
+    },
+    {
+        "title": "SDL-Fractal",
+        "description": "A simple markdown Previewer for the web",
+        "image": "https://picsum.photos/100/300"
     },
     {
         "title": "Drum Machine",
         "description": "A simple markdown Previewer for the web",
-        "image": "https://picsum.photos/600/200"
+        "image": "https://picsum.photos/100/200"
     },
     {
         "title": "Markdown Previewer",
         "description": "A simple markdown Previewer for the web",
-        "image": "https://picsum.photos/100/300"
+        "image": "https://picsum.photos/200/100"
+    },
+    {
+        "title": "Python-Chess",
+        "description": "A command line implementation of chess in Python 3",
+        "image": "https://picsum.photos/200/200"
+    },
+    {
+        "title": "Pomodoro Clock",
+        "description": "A simple markdown Previewer for the web",
+        "image": "https://picsum.photos/300/200"
     }
 ]
