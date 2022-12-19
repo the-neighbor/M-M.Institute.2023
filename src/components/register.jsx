@@ -2,31 +2,33 @@ import Card from "react-bootstrap/Card";
 import { Form, Button } from "react-bootstrap";
 
 
-function Login(props) {
+function Register(props) {
   async function handleSubmit(event) {
     event.preventDefault();
     console.log(process.env)
     const username = event.target.formUsername.value;
     const password = event.target.formPassword.value;
-    const result = await fetch(`${process.env.REACT_APP_API_URL}users/login`, 
+    const email = event.target.formEmail.value;
+    const result = await fetch(`${process.env.REACT_APP_API_URL}users/create`, 
     {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ username, password })
+      body: JSON.stringify({ email, username, password })
     });
     const data = await result.json();
-    if (data.token) {
-      localStorage.setItem('token', data.token);
-      window.location.replace("/me")
-    }
+    console.log(data);
   }
   return (
     <Card>
       <Card.Body>
         <Card.Title>Login</Card.Title>
         <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3" controlId="formEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control className="loginUsername" type="email" placeholder="Username" />
+          </Form.Group>
           <Form.Group className="mb-3" controlId="formUsername">
             <Form.Label>Username</Form.Label>
             <Form.Control className="loginUsername" type="text" placeholder="Username" />
@@ -44,4 +46,4 @@ function Login(props) {
     </Card>
   );
 }
-export default Login;
+export default Register;

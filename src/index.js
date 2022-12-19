@@ -15,6 +15,13 @@ import ProfilePage from "./routes/profile"
 import ErrorPage from "./routes/error-page";
 import ComposePage from './routes/compose';
 import PortfolioPage from './routes/portfolio';
+import LoginPage from './routes/login';
+import RegisterPage from './routes/register';
+import EditProfilePage from './routes/editProfile';
+import MyProfilePage from './routes/me';
+import SearchPage from './routes/search';
+import FeedPage from './routes/feed';
+import TagsPage from './routes/tag';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,7 +42,36 @@ const router = createBrowserRouter([
     {
       path: "/portfolio",
       element: <PortfolioPage />,
-    }]
+    },
+    {
+      path: "/login",
+      element: <LoginPage />,
+    },
+    {
+      path: "/register",
+      element: <RegisterPage />,
+    },
+    {
+      path: "/me",
+      element: <MyProfilePage />,
+    },
+    {
+      path: "/me/edit",
+      element: <EditProfilePage />
+    },
+    {
+      path:"/search",
+      element: <SearchPage />,
+    },
+    {
+      path:"/feed",
+      element: <FeedPage />
+    },
+    {
+      path:"/tags/:tag",
+      element: <TagsPage />
+    }
+  ]
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));

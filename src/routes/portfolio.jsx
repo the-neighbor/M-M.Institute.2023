@@ -8,7 +8,6 @@ export default function PortfolioPage(props) {
 
 
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [selected, setSelected] = useState({});
