@@ -12,7 +12,7 @@ export default function MyProfilePage (props) {
     useEffect(() => {
         async function fetchData() {
             setStatus('Loading');
-            var data = await fetch(`${api_url}/me`, {
+            var data = await fetch(`${api_url}me`, {
                 headers: {
                     Authorization: `${localStorage.getItem('token')}`
                 }

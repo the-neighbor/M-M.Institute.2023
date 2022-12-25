@@ -15,7 +15,7 @@ export default function ProfilePage (props) {
     useEffect(() => {
         async function fetchData() {
             setStatus('Loading');
-            var data = await fetch(`${api_url}/users/${userName}`)
+            var data = await fetch(`${api_url}users/${userName}`)
             var json = await data.json()
             console.log(json);
             setUserData(json);
