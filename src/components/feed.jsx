@@ -34,9 +34,9 @@ export default function Feed (props) {
                 <Col><Button onClick={() => setView('global')}>Global</Button></Col>
             </Row>
         <div className="feed">
-            {posts.map(post => (
+            {posts.map((post) => {
                 <Post key={post._id} {...post} />
-            ))}
+    })}
         </div>
         </Container>
     );

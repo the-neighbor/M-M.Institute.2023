@@ -6,7 +6,6 @@ async function getMe()
         }
     })
     const data = await result.json()
-    console.log(data)
     return data
 }
 
@@ -18,7 +17,6 @@ async function getFeed()
         }
     })
     const data = await result.json()
-    console.log(data)
     return data
 }
 
@@ -30,7 +28,6 @@ async function getTagsFeed()
         }
     })
     const data = await result.json()
-    console.log(data)
     return data
 }
 
@@ -42,7 +39,6 @@ async function getGlobalFeed()
         }
     })
     const data = await result.json()
-    console.log(data)
     return data
 }
 
@@ -54,9 +50,35 @@ async function getTag(tag)
         }
     })
     const data = await result.json()
-    console.log(data)
+    return data
+}
+
+async function getPost(id) {
+    const result = await fetch(`${process.env.REACT_APP_API_URL}posts/${id}`)
+    const data = await result.json()
+    return data
+}
+
+async function deletePost(id) {
+    const result = await fetch(`${process.env.REACT_APP_API_URL}posts/${id}`,
+    {
+        method: 'DELETE',
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('token')
+        }
+    }
+    )
+    const data = await result.json()
     return data
 }
 
 
-module.exports = {getMe, getFeed, getGlobalFeed, getTagsFeed, getTag}
+async function loggedIn() {
+    const me = await getMe()
+    if (me.username) {
+        return true
+    }
+    return false
+}
+
+module.exports = {getMe, getFeed, getGlobalFeed, getTagsFeed, getTag, getPost, loggedIn, deletePost}

@@ -22,6 +22,9 @@ import MyProfilePage from './routes/me';
 import SearchPage from './routes/search';
 import FeedPage from './routes/feed';
 import TagsPage from './routes/tag';
+import LogoutPage from './routes/logout';
+import HomePage from './routes/homepage';
+import AboutPage from './routes/about';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -70,6 +73,18 @@ const router = createBrowserRouter([
     {
       path:"/tags/:tag",
       element: <TagsPage />
+    },
+    {
+      path:"/logout",
+      element: <LogoutPage />
+    },
+    {
+      path:"/about",
+      element: <AboutPage />
+    },
+    {
+      path:"/",
+      element: <HomePage />
     }
   ]
   },

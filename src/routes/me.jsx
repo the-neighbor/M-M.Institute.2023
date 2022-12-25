@@ -7,7 +7,7 @@ export default function MyProfilePage (props) {
     const [status, setStatus] = useState("")
     const [userData, setUserData] = useState({});
     const [view, setView] = useState("posts");
-    const api_url= "http://localhost:3001"
+    const api_url= process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         async function fetchData() {

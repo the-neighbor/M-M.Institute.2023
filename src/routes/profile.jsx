@@ -8,9 +8,10 @@ export default function ProfilePage (props) {
     const [status, setStatus] = useState("")
     const [userData, setUserData] = useState({});
 
-    const api_url= "http://localhost:3001"
+    const api_url= process.env.REACT_APP_API_URL;
     let { userName } = useParams();
 
+    
     useEffect(() => {
         async function fetchData() {
             setStatus('Loading');
