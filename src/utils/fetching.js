@@ -1,4 +1,4 @@
-async function getMe()
+export async function getMe()
 {
     const result = await fetch(`${process.env.REACT_APP_API_URL}me` ,{
         headers: { 
@@ -9,7 +9,7 @@ async function getMe()
     return data
 }
 
-async function getFeed()
+export async function getFeed()
 {
     const result = await fetch(`${process.env.REACT_APP_API_URL}posts/feed` ,{
         headers: { 
@@ -20,7 +20,7 @@ async function getFeed()
     return data
 }
 
-async function getTagsFeed()
+export async function getTagsFeed()
 {
     const result = await fetch(`${process.env.REACT_APP_API_URL}posts/tagsfeed` ,{
         headers: { 
@@ -31,7 +31,7 @@ async function getTagsFeed()
     return data
 }
 
-async function getGlobalFeed()
+export async function getGlobalFeed()
 {
     const result = await fetch(`${process.env.REACT_APP_API_URL}posts/global` ,{
         headers: { 
@@ -42,7 +42,7 @@ async function getGlobalFeed()
     return data
 }
 
-async function getTag(tag)
+export async function getTag(tag)
 {
     const result = await fetch(`${process.env.REACT_APP_API_URL}tags/${encodeURIComponent('#' +  tag)}` ,{
         headers: { 
@@ -53,13 +53,13 @@ async function getTag(tag)
     return data
 }
 
-async function getPost(id) {
+export async function getPost(id) {
     const result = await fetch(`${process.env.REACT_APP_API_URL}posts/${id}`)
     const data = await result.json()
     return data
 }
 
-async function deletePost(id) {
+export async function deletePost(id) {
     const result = await fetch(`${process.env.REACT_APP_API_URL}posts/${id}`,
     {
         method: 'DELETE',
@@ -73,7 +73,7 @@ async function deletePost(id) {
 }
 
 
-async function loggedIn() {
+export async function loggedIn() {
     const me = await getMe()
     if (me.username) {
         return true
@@ -81,4 +81,3 @@ async function loggedIn() {
     return false
 }
 
-module.exports = {getMe, getFeed, getGlobalFeed, getTagsFeed, getTag, getPost, loggedIn, deletePost}

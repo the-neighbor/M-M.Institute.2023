@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-import { loggedIn } from './utils/fetching';
+import { loggedIn } from './utils/fetching.js';
 
 function Header() {
   let [loggedInStatus, setLoggedInStatus] = useState(false)

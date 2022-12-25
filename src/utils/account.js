@@ -1,8 +1,8 @@
-async function login() {
+export async function login() {
     ;
 };
 
-async function logout() {
+export async function logout() {
     localStorage.removeItem("token")
 };
 
