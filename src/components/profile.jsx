@@ -59,7 +59,7 @@ function Profile (props) {
     <Card>
         {/* <Card.Img variant="top" src={props.headerImg} /> */}
         <Card.Body>
-        <Image className="profileImage" roundedCircle={true} src={process.env.REACT_APP_API_URL + props.profile.image} />
+        <Image className="profileImage" roundedCircle={true} src={props.profile.image ? process.env.REACT_APP_API_URL + props.profile.image : "/assets/images/profile.png"} />
         <Card.Title>{props.profile.displayname}</Card.Title>
         <Card.Link href={"/profile/" + props.username}>@{props.username}</Card.Link>
         <Card.Text>

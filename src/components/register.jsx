@@ -19,6 +19,10 @@ function Register(props) {
     });
     const data = await result.json();
     console.log(data);
+    if (data.token) {
+      localStorage.setItem('token', data.token);
+      window.location.replace("/me/edit")
+    }
   }
   return (
     <Card>

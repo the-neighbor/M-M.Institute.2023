@@ -32,7 +32,7 @@ export default function ProfilePage (props) {
         <Container className="profile-page">
             <Row>
                 <Col sm={12} md={4}>
-                    {profile && profile.profile ? <Profile {...profile} /> : ""}
+                    {profile && profile.profile ? <Profile {...profile} /> : "" }
                 </Col>
                 <Col sm={12} md={8}>
                     {posts.map((post) => (<Post key={post._id} {...post} />))}
