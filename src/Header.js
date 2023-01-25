@@ -19,7 +19,7 @@ function Header() {
     return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">M-M.Institute</Navbar.Brand>
+        <Navbar.Brand href="/">M-M.Social</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -41,7 +41,7 @@ function Header() {
       return (
       <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">M-M.Institute</Navbar.Brand>
+        <Navbar.Brand href="/">M-M.Social</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

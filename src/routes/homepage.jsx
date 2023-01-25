@@ -4,17 +4,17 @@ import Profile from '../components/profile';
 
 export default function HomePage () {
     const demoPost = {
-        title: "This is a test post",
-        author: "testuser",
-        image: "https://picsum.photos/500/300",
-        body: "test body"
+        title: "An Introduction!",
+        username: "Olive",
+        imageUri: "https://picsum.photos/500/300",
+        content: "Hello everyone! I'm Olive, and I'm the creator of this website. I hope you enjoy it, and just wanted to share this stock photo with everyone!"
     }
     const demoProfile = {
-        username: "testuser",
+        username: "the-neighbor",
         profile: {
-            displayname: "Test User",
-            bio: "This is a test user",
-            image: ""
+            displayname: "Olive, The Neighbor",
+            bio: "Creator of M-M.Institute",
+            image: "https://picsum.photos/200/200"
         }
     }
 

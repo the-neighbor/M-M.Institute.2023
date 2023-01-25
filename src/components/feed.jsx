@@ -18,6 +18,7 @@ export default function Feed (props) {
             const data = await fetchers[view]();
             setPosts(data);
             setLoading(false);
+            console.log(data);
         };
         fetchPosts();
     }, [view]);
@@ -25,7 +26,7 @@ export default function Feed (props) {
     if (loading) {
         return <div>Loading...</div>;
     }
-
+    console.log(posts)
     return (
         <Container>
             <Row>
@@ -35,7 +36,7 @@ export default function Feed (props) {
             </Row>
         <div className="feed">
             {posts.map((post) => {
-                <Post key={post._id} {...post} />
+                return <Post key={post._id} {...post} />
     })}
         </div>
         </Container>

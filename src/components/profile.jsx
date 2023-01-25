@@ -54,12 +54,21 @@ function Profile (props) {
     updateFollowing();
     }, [props._id, following]);
 
+    function renderImage(uri) {
+      if (uri && uri !== "undefined") {
+        const completeUri = (uri.match(/[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig)) ? uri : process.env.REACT_APP_API_URL + uri;
+        return completeUri;
+      }
+      return "/assets/images/profile.png";
+    }
+
+    const formattedImage = renderImage(props.profile.image);
   return (
     <div className="profile">
     <Card>
         {/* <Card.Img variant="top" src={props.headerImg} /> */}
         <Card.Body>
-        <Image className="profileImage" roundedCircle={true} src={props.profile.image ? process.env.REACT_APP_API_URL + props.profile.image : "/assets/images/profile.png"} />
+        <Image className="profileImage" roundedCircle={true} src={formattedImage} />
         <Card.Title>{props.profile.displayname}</Card.Title>
         <Card.Link href={"/profile/" + props.username}>@{props.username}</Card.Link>
         <Card.Text>
