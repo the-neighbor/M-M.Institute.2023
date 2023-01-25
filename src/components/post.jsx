@@ -79,12 +79,21 @@ function Post (props) {
       }
     }, [props])
 
+    function renderImage(uri) {
+      if (uri) {
+        const completeUri = (uri.match(/[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig)) ? uri : process.env.REACT_APP_API_URL + uri;
+        return <Card.Img variant="top" src={completeUri} />
+      }
+      return "";
+    }
+
     const formattedTitle = renderText(props.title);
     const formattedContent = renderText(props.content);
+    const formattedImage = renderImage(props.imageUri)
   return (
     <div className="post">
     <Card>
-        {props.imageUri ? <Card.Img variant="top" src={process.env.REACT_APP_API_URL + props.imageUri} /> : null}
+        {formattedImage}
         <Card.Body>
           {props.repost? <Post {...repost}/> : null}
         <Card.Title>{formattedTitle}</Card.Title>
